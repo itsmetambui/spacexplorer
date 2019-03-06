@@ -7,11 +7,15 @@ const { createStore } = require('./utils');
 const LaunchAPI = require('./datasources/launch');
 const UserAPI = require('./datasources/user');
 
+require('dotenv').config();
+
 const store = createStore();
 
 const resolvers = require('./resolvers');
 
 const server = new ApolloServer({
+  playground: true,
+  introspection: true,
   context: async ({ req }) => {
     // simple auth check on every request
     const auth = (req.headers && req.headers.authorization) || '';
@@ -33,6 +37,8 @@ const server = new ApolloServer({
   })
 });
 
-server.listen().then(({ url }) => {
+const port = process.env.PORT || 4000;
+
+server.listen({port}).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
 });

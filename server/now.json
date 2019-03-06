@@ -1,4 +1,14 @@
 {
   "version": 2,
-  "name": "spacexplorer-server"
+  "name": "spacexplorer-server",
+  "builds": [
+    { "src": "src/index.js", "use": "@now/node-server" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "src/index.js" }
+  ],
+  "env": {
+    "CONNECTION_URI": "@spacexplorer-db-uri",
+    "ENGINE_API_KEY": "@spacexplorer-graph-engine"
+  }
 }

@@ -36,11 +36,8 @@ module.exports.createStore = () => {
     $in: Op.in,
   };
 
-  const db = new SQL('database', 'username', 'password', {
-    dialect: 'sqlite',
-    storage: './store.sqlite',
+  const db = new SQL(process.env.CONNECTION_URI || 'mysql://localhost:3306/spacexplorer', {
     operatorsAliases,
-    logging: false,
   });
 
   const users = db.define('user', {
@@ -63,9 +60,13 @@ module.exports.createStore = () => {
     },
     createdAt: SQL.DATE,
     updatedAt: SQL.DATE,
-    launchId: SQL.INTEGER,
-    userId: SQL.INTEGER,
+    launchId: SQL.INTEGER
   });
+
+  trips.belongsTo(users);
+
+  users.sync();
+  trips.sync();
 
   return { users, trips };
 };
