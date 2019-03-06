@@ -4,7 +4,7 @@ This application is built with React, Express, Graphql, Mysql.
 
 Allow you to browse and book space trips from [SpaceX APIs](https://api.spacexdata.com/v3/).
 
-Live [here](https://api.spacexdata.com/v3/).
+Live [here](https://spacexplorer.now.sh/).
 
 ## Motivation
 
