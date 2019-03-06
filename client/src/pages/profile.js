@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import { Loading, Header, LaunchTile } from '../components';
 import { LAUNCH_TILE_DATA } from './launches';
 
-const GET_MY_TRIPS = gql`
+export const GET_MY_TRIPS = gql`
   query GetMyTrips {
     me {
       id

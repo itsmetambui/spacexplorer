@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-
 import { GET_CART_ITEMS } from './pages/cart';
 
 export const typeDefs = gql`
