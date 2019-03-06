@@ -30,7 +30,7 @@ export default class LoginForm extends Component {
           <StyledLogo />
         </Header>
         <StyledRocket />
-        <Heading>Space Explorer</Heading>
+        <Heading>SpacExplorer</Heading>
         <StyledForm onSubmit={this.onSubmit}>
           <StyledInput
             required
