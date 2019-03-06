@@ -5,7 +5,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 import { ApolloProvider } from 'react-apollo';
 
-import Pages from './pages/index';
+import Pages from './pages';
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
